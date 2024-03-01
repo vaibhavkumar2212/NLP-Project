@@ -1,0 +1,76 @@
+[2024-03-01 10:40:03,383: INFO: config: PyTorch version 2.2.1 available.]
+[2024-03-01 10:40:06,226: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-03-01 10:40:06,240: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-01 10:40:06,245: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-01 10:40:06,248: INFO: common: created directory at: artifacts]
+[2024-03-01 10:40:06,254: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-01 10:40:13,998: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: C0A4:2D70FB:519763:6A5C64:65E16333
+Accept-Ranges: bytes
+Date: Fri, 01 Mar 2024 05:10:12 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21748-DEL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1709269811.418114,VS0,VE748
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: b4b334849b23ce5a63e4eca73fc0fc2bc99177f5
+Expires: Fri, 01 Mar 2024 05:15:12 GMT
+Source-Age: 0
+
+]
+[2024-03-01 10:40:14,573: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-03-01 10:40:14,576: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-03-01 10:40:14,603: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-01 10:40:14,625: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-01 10:40:14,627: INFO: common: created directory at: artifacts]
+[2024-03-01 10:40:14,630: INFO: common: created directory at: artifacts/data_validation]
+[2024-03-01 10:40:14,644: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-03-01 10:40:14,646: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-03-01 10:40:14,660: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-01 10:40:14,671: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-01 10:40:14,675: INFO: common: created directory at: artifacts]
+[2024-03-01 10:40:14,677: INFO: common: created directory at: artifacts/data_transformation]
+[2024-03-01 10:40:34,739: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-03-01 10:40:34,739: INFO: main: *******************]
+[2024-03-01 10:40:34,739: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-03-01 10:40:34,747: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-03-01 10:40:34,752: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-01 10:40:34,752: INFO: common: created directory at: artifacts]
+[2024-03-01 10:40:34,752: INFO: common: created directory at: artifacts/model_trainer]
+[2024-03-01 10:44:25,765: ERROR: main: Using the `Trainer` with `PyTorch` requires `accelerate>=0.21.0`: Please run `pip install transformers[torch]` or `pip install accelerate -U`]
+Traceback (most recent call last):
+  File "C:\Users\vaibh\OneDrive\Desktop\DS_Projects\NLP_Projects\Text_Summarization\main.py", line 51, in <module>
+    model_trainer.main()
+  File "c:\users\vaibh\onedrive\desktop\ds_projects\nlp_projects\text_summarization\src\textSummarizer\pipeline\stage_04_model_trainer.py", line 14, in main
+    model_trainer_config.train()
+  File "c:\users\vaibh\onedrive\desktop\ds_projects\nlp_projects\text_summarization\src\textSummarizer\conponents\model_trainer.py", line 34, in train
+    trainer_args = TrainingArguments(
+  File "<string>", line 123, in __init__
+  File "C:\Users\vaibh\anaconda3\envs\summary\lib\site-packages\transformers\training_args.py", line 1528, in __post_init__
+    and (self.device.type != "cuda")
+  File "C:\Users\vaibh\anaconda3\envs\summary\lib\site-packages\transformers\training_args.py", line 1995, in device
+    return self._setup_devices
+  File "C:\Users\vaibh\anaconda3\envs\summary\lib\site-packages\transformers\utils\generic.py", line 56, in __get__
+    cached = self.fget(obj)
+  File "C:\Users\vaibh\anaconda3\envs\summary\lib\site-packages\transformers\training_args.py", line 1905, in _setup_devices
+    raise ImportError(
+ImportError: Using the `Trainer` with `PyTorch` requires `accelerate>=0.21.0`: Please run `pip install transformers[torch]` or `pip install accelerate -U`
